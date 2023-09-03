@@ -1,0 +1,264 @@
+:root {
+
+    --pale-blue: hsl( 225, 100%, 94% );
+    --bright-blue: hsl( 245, 75%, 52% );
+    --very-pale-blue: hsl( 225, 100%, 98% );
+    --desaturated-blue: hsl( 224, 23%, 55% );
+    --dark-blue: hsl( 223, 47%, 23% );
+
+    --active-state: hsl( 245, 83%, 68% );
+
+    /* Weights: 500, 700, 900 */
+    --ff-red-hat-display: 'Red Hat Display';
+    --font-size: 1rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    background-color: var( --pale-blue );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var( --ff-red-hat-display );
+    font-size: var( --font-size );
+
+    overflow: hidden;
+}
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+.order-summary-card-wrapper {
+  width: 30rem;
+
+  border-radius: 1rem;
+
+  background-color: var( --very-pale-blue );
+
+  box-shadow: 0px 20px 20px 0px hsl(226.96deg 74.19% 87.84%);
+
+  margin-inline: 1rem;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.illustration-hero {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: 100%;
+}
+
+.order-summary-wrapper {
+  padding: 3rem;
+}
+
+.order-summary-content {
+  width: 90%;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.order-summary-title {
+  color: var( --dark-blue );
+  font-weight: 900;
+}
+
+.order-summary-desc {
+  color: var( --desaturated-blue );
+
+  font-weight: 500;
+
+  margin-top: 1rem;
+
+  line-height: 1.5rem;
+}
+
+.annual-plan-wrapper {
+  margin-block: 2rem;
+  padding: 1.5rem;
+
+  border-radius: 1rem;
+
+  background-color: hsla( 225, 100%, 94%, .45 );
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.annual-plan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.annual-plan-price {
+  line-height: 1.5rem;
+  margin-left: 1rem;
+}
+
+.annual-plan-title {
+  color: var( --dark-blue );
+  font-weight: 900;
+}
+
+.annual-plan-amount {
+  color: var( --desaturated-blue );
+
+  font-weight: 500;
+}
+
+.annual-plan-change {
+  color: var( --bright-blue );
+
+  font-weight: 700;
+
+  text-decoration: underline;
+}
+.annual-plan-change:hover,
+.annual-plan-change:focus,
+.annual-plan-change:active { 
+  transition: .1s ease-in-out;
+  color: var( --active-state );
+}
+
+.order-summary-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-summary-proceed {
+  width: 100%;
+
+  border-radius: 0.75rem;
+
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  color: var( --very-pale-blue );
+  background-color: var( --bright-blue );
+
+  font-weight: 900;
+
+  box-shadow: 0px 20px 20px 0px hsl( 243, 100%, 92% );
+}
+.order-summary-proceed:hover { 
+  transition: .2s ease-in-out;
+  background-color: var( --active-state );
+}
+
+.order-summary-cancel {
+  width: 100%;
+
+  border-radius: 1rem;
+
+  padding: 1rem;
+
+  color: var( --desaturated-blue );
+
+  font-weight: 900;
+}
+.order-summary-cancel:hover {
+  transition: .2s ease-in-out;
+  color: var( --dark-blue );
+}
+
+.ocean { 
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index: 1;
+}
+
+.wave {
+  background: url( './images/pattern-background-desktop.svg' ) repeat-x;   
+  position: absolute;
+  top: -1000px;
+  width: 6400px;
+  height: 50rem;
+  animation: wave 10s linear infinite alternate;
+}
+
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+
+@media only screen and ( max-width: 600px ) {
+  .wave {
+    top: -900px;
+  }
+
+  .order-summary-wrapper {
+    padding: 1.5rem;
+  }
+
+  .order-summary-content {
+    width: auto;
+  }
+
+  .order-summary-title {
+    font-size: 1.5rem;
+  }  
+
+  .annual-plan-wrapper {
+    padding: 1rem;
+  }
+}
+
+@media only screen and ( max-width: 350px ) {
+  body {
+    height: auto;
+  }
+
+  .order-summary-card-wrapper {
+    margin-inline: 0;
+  }
+
+  .illustration-hero {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }  
+
+  .annual-plan-wrapper {
+    flex-direction: column;
+  }  
+
+  .annual-plan {
+    margin: 1rem auto;
+  }  
+  .annual-plan-change {
+    margin: 1rem auto;
+  }  
+}

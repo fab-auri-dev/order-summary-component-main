@@ -190,16 +190,16 @@ button {
 .ocean { 
   width:100%;
   position:absolute;
-  bottom:0;
+  top:0;
   left:0;
-  z-index: 1;
+  /* z-index: 1; */
   overflow: hidden;
 }
 
 .wave {
   background: url( './images/pattern-background-desktop.svg' ) repeat-x;   
-  position: absolute;
-  top: -1000px;
+  /* position: absolute;
+  top: -1000px; */
   width: 6400px;
   height: 50rem;
   animation: wave 10s linear infinite alternate;
